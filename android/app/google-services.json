@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "428311652524",
+    "firebase_url": "https://switch-chat-7777.firebaseio.com",
+    "project_id": "switch-chat-7777",
+    "storage_bucket": "switch-chat-7777.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:428311652524:android:9ff0e36b4d4c59b5ced709",
+        "android_client_info": {
+          "package_name": "com.switchsocialmediaapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "428311652524-6g2hehe9iarkocukgk3lc4ljam1qq26m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.switchsocialmediaapplication",
+            "certificate_hash": "2fd53fc2a5aa3a5895625ea813f531e9fff9bb05"
+          }
+        },
+        {
+          "client_id": "428311652524-5523kjq9pr51q3505trtrkaotq0php93.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYmaCFJ5GayOJ4nfO2c8ll79xOOiBpHH4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "428311652524-5523kjq9pr51q3505trtrkaotq0php93.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "428311652524-ppp82gajfluuheki2f8t3n1jg1h9d4s7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.socialnetworkchatapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
