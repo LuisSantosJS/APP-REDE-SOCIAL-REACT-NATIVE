@@ -15,6 +15,7 @@
 		167B78A124E4BDC9005A9969 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 167B789F24E4BDC9005A9969 /* GoogleService-Info.plist */; };
 		167B78A224E4BDC9005A9969 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 167B789F24E4BDC9005A9969 /* GoogleService-Info.plist */; };
 		167B78A324E4BDC9005A9969 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 167B789F24E4BDC9005A9969 /* GoogleService-Info.plist */; };
+		16956B0724F6A2640043A9D5 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 16956B0624F6A2640043A9D5 /* Expo.plist */; };
 		1CC43E118412ADC2A6FAFDF9 /* libPods-switchsocialmediaapplication-switchsocialmediaapplicationTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AFD4E287ABE6CB72C760F61 /* libPods-switchsocialmediaapplication-switchsocialmediaapplicationTests.a */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -53,6 +54,7 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = switchsocialmediaapplication/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = switchsocialmediaapplication/main.m; sourceTree = "<group>"; };
 		167B789F24E4BDC9005A9969 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		16956B0624F6A2640043A9D5 /* Expo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* switchsocialmediaapplication-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "switchsocialmediaapplication-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* switchsocialmediaapplication-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "switchsocialmediaapplication-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		41E76825B3004E3C75764417 /* libPods-switchsocialmediaapplication.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-switchsocialmediaapplication.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,7 +122,7 @@
 		13B07FAE1A68108700A75B9A /* switchsocialmediaapplication */ = {
 			isa = PBXGroup;
 			children = (
-				167B789F24E4BDC9005A9969 /* GoogleService-Info.plist */,
+				16956B0524F6A20A0043A9D5 /* Supporting */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -130,6 +132,15 @@
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
 			name = switchsocialmediaapplication;
+			sourceTree = "<group>";
+		};
+		16956B0524F6A20A0043A9D5 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				167B789F24E4BDC9005A9969 /* GoogleService-Info.plist */,
+				16956B0624F6A2640043A9D5 /* Expo.plist */,
+			);
+			path = Supporting;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -333,6 +344,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16956B0724F6A2640043A9D5 /* Expo.plist in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				167B78A024E4BDC9005A9969 /* GoogleService-Info.plist in Resources */,
@@ -361,7 +373,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
@@ -369,9 +381,9 @@
 			name = "Bundle React Native code and images";
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n../node_modules/expo-updates/scripts/create-manifest-ios.sh\n";
 		};
 		0B31E2C847B424CC410CC176 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;

@@ -1,4 +1,9 @@
 {
   "name": "switchsocialmediaapplication",
-  "displayName": "switchsocialmediaapplication"
+  "displayName": "switchsocialmediaapplication",
+  "expo": {
+    "name": "switchsocialmediaapplication",
+    "slug": "switchsocialmediaapplication",
+    "sdkVersion": "38.0.0"
+  }
 }

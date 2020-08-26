@@ -49,7 +49,7 @@ interface ITEMFEED {
 }
 const Home: React.FC = () => {
     const { feed, setFeed } = useFeed();
-    const { userID } = useUserID();
+    const { userID,setUserID } = useUserID();
     const { userEmail } = useUserEmail();
     const navigation = useNavigation();
     const opacityNameHeader = new Animated.Value(1);
