@@ -3,6 +3,9 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 require_relative '../node_modules/react-native-unimodules/cocoapods.rb'
 
 platform :ios, '10.0'
+install! 'cocoapods',
+:deterministic_uuids => false
+
 
 target 'switchsocialmediaapplication' do use_unimodules!
   config = use_native_modules!
@@ -11,7 +14,19 @@ target 'switchsocialmediaapplication' do use_unimodules!
 
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
   
-  pod 'Firebase/Analytics'
+
+  
+  pod 'GoogleUtilities'
+  pod 'GoogleUtilities/AppDelegateSwizzler'
+  pod 'GoogleUtilities/MethodSwizzler'
+  pod 'GoogleUtilities/Network'
+  pod 'GoogleUtilities/NSData+zlib'
+  pod 'GoogleUtilities/AppDelegateSwizzler'
+  pod 'GoogleUtilities/Environment'
+  pod 'GoogleUtilities/Logger'
+  pod 'GoogleUtilities/UserDefaults'
+  pod 'GoogleUtilities/Reachability'
+
   
   permissions_path = '../node_modules/react-native-permissions/ios'
 
@@ -31,6 +46,8 @@ target 'switchsocialmediaapplication' do use_unimodules!
   pod 'Permission-Siri', :path => "#{permissions_path}/Siri.podspec"
   pod 'Permission-SpeechRecognition', :path => "#{permissions_path}/SpeechRecognition.podspec"
   pod 'Permission-StoreKit', :path => "#{permissions_path}/StoreKit.podspec"
+  
+
   
 
   target 'switchsocialmediaapplicationTests' do

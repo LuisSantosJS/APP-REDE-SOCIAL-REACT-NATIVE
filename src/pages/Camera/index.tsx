@@ -11,13 +11,11 @@ import {
 import Toast from 'react-native-simple-toast';
 import styles from './styles';
 import * as ImagePicker from 'expo-image-picker';
-import { captureRef } from "react-native-view-shot";
 import ViewShot from "react-native-view-shot";
 import { useUriImage, useUriImageSmall, useUriImageAspectRatio } from '../../context/contextCamera';
-import { useUserID } from '../../context/contextMain';
+import { useUserID, useUserSaved } from '../../context/contextMain';
 import { useNavigation } from '@react-navigation/native';
 import ImageResizer from 'react-native-image-resizer';
-import storage from '@react-native-firebase/storage';
 import { RNCamera, FaceDetector, Face, TakePictureOptions } from 'react-native-camera';
 import { Col, Row, Grid } from "react-native-easy-grid";
 import Icon from '../../assets/icons/icons';
@@ -58,13 +56,17 @@ const CameraScreen: React.FC = () => {
     }
 
     const AlterModeFlash = () => {
-        if (flash == RNCamera.Constants.FlashMode.off) {
-            setFlash(RNCamera.Constants.FlashMode.torch)
-        } else {
+        if (flash == RNCamera.Constants.FlashMode.torch) {
             setFlash(RNCamera.Constants.FlashMode.off)
+        } else {
+            setFlash(RNCamera.Constants.FlashMode.torch)
         }
     }
     const handlePressCamera = () => {
+        if (userID == 0) {
+            Toast.showWithGravity('Você precisa se cadastrar', Toast.LONG, Toast.TOP);
+            return navigation.navigate('Auth');
+        }
         setPressCamera(true);
         takePicture();
     }
@@ -190,7 +192,7 @@ const CameraScreen: React.FC = () => {
 
 
             <TouchableOpacity onPress={AlterModeFlash} style={styles.viewFlashIcon}>
-                <Icon.Ionicons name={flash == RNCamera.Constants.FlashMode.off ? "flash" : "flash-off"} color="white" size={width * 0.08} />
+                <Icon.Ionicons name={flash == RNCamera.Constants.FlashMode.torch ? "flash" : "flash-off"} color="white" size={width * 0.08} />
             </TouchableOpacity>
 
             <Grid style={styles.gridContainerButtons}>

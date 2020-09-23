@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>428311652524-p099laa889ct087dav6vj6epafmlbrho.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.428311652524-p099laa889ct087dav6vj6epafmlbrho</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>428311652524-6g2hehe9iarkocukgk3lc4ljam1qq26m.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD8FOHBWhzIovVKQl1r_BD0C07lNaruodo</string>
+	<key>GCM_SENDER_ID</key>
+	<string>428311652524</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.switchsocialmediaapplication</string>
+	<key>PROJECT_ID</key>
+	<string>switch-chat-7777</string>
+	<key>STORAGE_BUCKET</key>
+	<string>switch-chat-7777.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:428311652524:ios:93e29063f159e3c3ced709</string>
+	<key>DATABASE_URL</key>
+	<string>https://switch-chat-7777.firebaseio.com</string>
+</dict>
+</plist>

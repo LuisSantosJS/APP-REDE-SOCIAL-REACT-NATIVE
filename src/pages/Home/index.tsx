@@ -17,7 +17,6 @@ import {
 
 import api from '../../services/api';
 import SplashScreen from 'react-native-splash-screen'
-import ScrollBottomSheet from 'react-native-scroll-bottom-sheet';
 import styles from './styles';
 import { Modalize } from 'react-native-modalize';
 import Toast from 'react-native-simple-toast';
@@ -49,13 +48,9 @@ interface ITEMFEED {
 }
 const Home: React.FC = () => {
     const { feed, setFeed } = useFeed();
-    const { userID,setUserID } = useUserID();
+    const { userID, setUserID } = useUserID();
     const { userEmail } = useUserEmail();
     const navigation = useNavigation();
-    const opacityNameHeader = new Animated.Value(1);
-    const [enabledSearch, setEnabledSearch] = useState<boolean>(false);
-    const bottomSheetRef = React.useRef<ScrollBottomSheet<any> | null>(null);
-    const [visibleModal, setVisibleModal] = useState<boolean>(true);
     const [feedModal, setFeedModal] = useState<ITEMFEED>();
     const [countFeedQuery, setCountFeedQuery] = useState<number>(2);
     const [isRefreshFeed, setIsRefreshFeed] = useState<boolean>(false);
@@ -72,28 +67,23 @@ const Home: React.FC = () => {
     useEffect(() => {
         SplashScreen.hide()
     }, []);
-    const handleSearch = () => {
-        Animated.timing(opacityNameHeader, {
-            toValue: 0,
-            duration: 100,
-            useNativeDriver: false
-        }).start();
-        setTimeout(() => setEnabledSearch(true), 100);
 
-    }
-    const handleSearchClose = () => {
-        Animated.timing(opacityNameHeader, {
-            toValue: 1,
-            duration: 100,
-            useNativeDriver: false
-        }).start();
-        setTimeout(() => setEnabledSearch(false), 100);
-    }
 
     function handleUserAuth() {
         Toast.showWithGravity('Você precisa se cadastrar', Toast.LONG, Toast.TOP);
         navigation.navigate('Auth');
     }
+
+    function handleCommentsPage(id: string) {
+        navigation.navigate('Comments', { postID: id });
+    }
+    function handleChatRoomsPage() {
+        if (userID == 0) {
+            return handleUserAuth();
+        }
+        navigation.navigate('ChatRooms');
+    }
+
 
     const likeSelectUnSelect = (post: ITEMFEED) => {
         if (userID == 0) {
@@ -201,14 +191,14 @@ const Home: React.FC = () => {
                             </TouchableOpacity>
                             <View>
                                 <Text numberOfLines={1} style={styles.name}>{post.name}</Text>
-                                <Text numberOfLines={1} style={styles.mommentPost}>{moment(post.created_at).locale('pt-br').fromNow()}</Text>
+                                <Text numberOfLines={1} style={styles.mommentPost}>{moment(post.created_at).locale('pt-br').format('L')}</Text>
                             </View>
                         </View>
                         <View style={styles.containerButtonsEndViewPost}>
                             <TouchableOpacity onPress={() => sendLikePost(post, index)} >
                                 <Icon.AntDesign name={likeSelectUnSelect(post) ? "heart" : "hearto"} size={width * 0.06} color="white" />
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={() => onOpenModal(post)}  >
+                            <TouchableOpacity onPress={() => handleCommentsPage(String(post.id))}  >
                                 <Icon.Ionicons name="ios-chatbox" size={width * 0.06} color="white" />
                             </TouchableOpacity>
                             <TouchableOpacity onPress={() => { }}>
@@ -228,24 +218,17 @@ const Home: React.FC = () => {
             <LinearGradient colors={['#191919', '#141414']} style={[styles.header]}>
                 <View style={{ flexDirection: 'row', flex: 1, alignItems: "center", justifyContent: 'space-between', paddingHorizontal: width * 0.02 }}>
                     <View style={styles.headerTextContainer}>
-                        {enabledSearch ?
-                            <Animated.View style={styles.inputSearch} >
-                                <TextInput
-                                    placeholder={'Search...'}
-                                />
-                            </Animated.View> :
-                            <Animated.Text style={[styles.textHeader, { opacity: opacityNameHeader }]}>Switch Chat</Animated.Text>}
-
+                        <Text style={[styles.textHeader]}>Switch Chat</Text>
                     </View>
                     <View style={styles.headerIconContainer}>
                         <TouchableOpacity style={[styles.buttomHeader]} onPress={() => navigation.navigate('Profile')}>
                             <Icon.Ionicons name="md-person" size={width * 0.06} color={'black'} />
                         </TouchableOpacity>
-                        <TouchableOpacity style={[styles.buttomHeader]}>
+                        <TouchableOpacity onPress={handleChatRoomsPage} style={[styles.buttomHeader]}>
                             <Icon.Ionicons name="ios-chatbubbles" size={width * 0.06} color={'black'} />
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={() => enabledSearch ? handleSearchClose() : handleSearch()} style={[styles.buttomHeader]}>
-                            <Icon.Ionicons name={enabledSearch ? "md-close" : "ios-search"} size={width * 0.06} color={'black'} />
+                        <TouchableOpacity onPress={() => { }} style={[styles.buttomHeader]}>
+                            <Icon.Ionicons name={"ios-search"} size={width * 0.06} color={'black'} />
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -287,7 +270,7 @@ const Home: React.FC = () => {
                         </TouchableOpacity>
                         <View>
                             <Text numberOfLines={1} style={[styles.name]}>{feedModal?.name}</Text>
-                            <Text numberOfLines={1} style={styles.mommentPost}>{moment(feedModal?.created_at).locale('pt-br').fromNow()}</Text>
+                            <Text numberOfLines={1} style={styles.mommentPost}>{moment(feedModal?.created_at).locale('pt-br').format('L')}</Text>
                         </View>
                     </View>
                     <View style={styles.containerButtonsEndViewPost}>
@@ -295,15 +278,12 @@ const Home: React.FC = () => {
                             <Text style={{ color: 'white', fontSize: width * 0.055 }}>{feedModal?.likesNumber}</Text>
                             <Icon.AntDesign name={feedModal?.likesNumber == 0 ? "hearto" : "heart"} size={width * 0.06} color="white" />
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={() => { }} >
+                        <TouchableOpacity onPress={() => handleCommentsPage(String(feedModal?.id))} >
                             <Icon.Ionicons name="ios-chatbox" size={width * 0.06} color="white" />
                         </TouchableOpacity>
 
                     </View>
                 </View>
-
-
-
             </Modalize>
         </>
     );

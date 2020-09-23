@@ -1,14 +1,13 @@
 import React from 'react';
-import { View, StatusBar } from 'react-native';
+import {  StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-// import Home from '../pages/Home';
 import Profile from '../pages/Profile';
 import Auth from '../pages/Auth';
 import MultiScreenHome from '../Component/MultiScreenHome';
-//import Home from '../pages/Home';
 import PostPublish from '../pages/PostPublish';
-
+import Comments from '../pages/Comments';
+import ChatRooms from '../pages/ChatRooms';
 
 const AppStack = createStackNavigator();
 
@@ -45,6 +44,25 @@ const MainRouter: React.FC = () => {
                     }}
                     component={PostPublish}
                     name='PostPublish'
+                />
+                <AppStack.Screen
+                    options={{
+                        headerShown: true,
+                        title: 'Comentários',
+                        headerStyle: { backgroundColor: '#191919' },
+                        headerTitleStyle: { color: 'white' },
+                        headerTintColor: 'white'
+                    }}
+                    initialParams={{ postID: 1 }}
+                    component={Comments}
+                    name='Comments'
+                />
+                <AppStack.Screen
+                    options={{
+                        headerShown: false,
+                    }}
+                    component={ChatRooms}
+                    name='ChatRooms'
                 />
             </AppStack.Navigator>
         </NavigationContainer>

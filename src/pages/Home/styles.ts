@@ -23,7 +23,9 @@ const styles = StyleSheet.create({
     },
     textHeader: {
         color: 'white',
-        fontSize: width * 0.07
+        fontSize: width * 0.07,
+        fontWeight:'500',
+        textAlign:'center'
     },
     headerTextContainer: {
         height: '100%',

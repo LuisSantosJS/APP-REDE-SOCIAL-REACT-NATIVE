@@ -112,6 +112,7 @@ const ProviderAuth: React.FC = ({ children }) => {
             api.get(`/posts?page=1`).then((res) => {
                 setFeed(res.data);
             }).catch(err => {
+                console.log(err)
                 Toast.showWithGravity('Ocorreu um erro ao carregar feed!', Toast.LONG, Toast.TOP);
             })
         }
