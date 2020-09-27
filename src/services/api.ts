@@ -1,5 +1,5 @@
 import axios from 'axios';
-const URL = 'http://192.168.100.99:3000'
+const URL = 'https://api-rede-social.herokuapp.com'
 const api = axios.create({
     baseURL: URL
 });
