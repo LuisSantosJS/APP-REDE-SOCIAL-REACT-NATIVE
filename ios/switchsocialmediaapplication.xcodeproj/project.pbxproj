@@ -16,7 +16,6 @@
 		167B78A224E4BDC9005A9969 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 167B789F24E4BDC9005A9969 /* GoogleService-Info.plist */; };
 		167B78A324E4BDC9005A9969 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 167B789F24E4BDC9005A9969 /* GoogleService-Info.plist */; };
 		16956B0724F6A2640043A9D5 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 16956B0624F6A2640043A9D5 /* Expo.plist */; };
-		16A0E7742519ADEE00E351A2 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16A0E7732519ADEE00E351A2 /* SplashScreen.storyboard */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -56,7 +55,6 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = switchsocialmediaapplication/main.m; sourceTree = "<group>"; };
 		167B789F24E4BDC9005A9969 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		16956B0624F6A2640043A9D5 /* Expo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
-		16A0E7732519ADEE00E351A2 /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* switchsocialmediaapplication-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "switchsocialmediaapplication-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* switchsocialmediaapplication-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "switchsocialmediaapplication-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4697088D6F209D9047683A7E /* Pods-switchsocialmediaapplication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-switchsocialmediaapplication.debug.xcconfig"; path = "Target Support Files/Pods-switchsocialmediaapplication/Pods-switchsocialmediaapplication.debug.xcconfig"; sourceTree = "<group>"; };
@@ -132,7 +130,6 @@
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
-				16A0E7732519ADEE00E351A2 /* SplashScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
 			name = switchsocialmediaapplication;
@@ -350,7 +347,6 @@
 				16956B0724F6A2640043A9D5 /* Expo.plist in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				16A0E7742519ADEE00E351A2 /* SplashScreen.storyboard in Resources */,
 				167B78A024E4BDC9005A9969 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

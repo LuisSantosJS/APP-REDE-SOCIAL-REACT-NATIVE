@@ -1,5 +1,5 @@
 import React from 'react';
-import {  StatusBar } from 'react-native';
+import { StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Profile from '../pages/Profile';
@@ -8,7 +8,8 @@ import MultiScreenHome from '../Component/MultiScreenHome';
 import PostPublish from '../pages/PostPublish';
 import Comments from '../pages/Comments';
 import ChatRooms from '../pages/ChatRooms';
-
+import SearchUserChat from '../pages/SearchUsersChat';
+import ClassChatRoom from '../pages/ClassChatRoom';
 const AppStack = createStackNavigator();
 
 const MainRouter: React.FC = () => {
@@ -51,7 +52,8 @@ const MainRouter: React.FC = () => {
                         title: 'Comentários',
                         headerStyle: { backgroundColor: '#191919' },
                         headerTitleStyle: { color: 'white' },
-                        headerTintColor: 'white'
+                        headerTintColor: 'white',
+                        headerBackTitleVisible: false
                     }}
                     initialParams={{ postID: 1 }}
                     component={Comments}
@@ -63,6 +65,25 @@ const MainRouter: React.FC = () => {
                     }}
                     component={ChatRooms}
                     name='ChatRooms'
+                />
+                <AppStack.Screen
+                    options={{
+                        headerShown: true,
+                        title: 'Iniciar uma nova conversa!',
+                        headerStyle: { backgroundColor: '#191919' },
+                        headerTitleStyle: { color: 'white' },
+                        headerTintColor: 'white',
+                        headerBackTitleVisible: false
+                    }}
+                    component={SearchUserChat}
+                    name='SearchUserChat'
+                />
+                <AppStack.Screen
+                    options={{
+                        headerShown: false,
+                    }}
+                    component={ClassChatRoom}
+                    name='ClassChatRoom'
                 />
             </AppStack.Navigator>
         </NavigationContainer>

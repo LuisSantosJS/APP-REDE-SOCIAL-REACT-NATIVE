@@ -4,8 +4,6 @@ import {
     TouchableOpacity,
     Text,
     ImageBackground,
-    TextInput,
-    RefreshControl,
     FlatList,
     Dimensions,
     Image,
